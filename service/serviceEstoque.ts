@@ -11,8 +11,8 @@ class estoqueService {
         if(!data || data.id == null || data.valor == null){
             throw new Error("Dados inválidos")
         }
-        if(isNaN(data.id) || data.id << 0){
-            throw new Error("o ID não é um número válido")
+        if (isNaN(data.id) || data.id < 0) {
+            throw new Error("O ID não é um número válido ou é negativo");
         }
 
         // Hora de verificar se ID já está sendo usada
