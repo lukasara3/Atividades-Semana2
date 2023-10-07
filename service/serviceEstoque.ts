@@ -47,6 +47,13 @@ class estoqueService {
         await writeCSV(filePath, items); // reescrevendo o arquivo com a lista atualizada
     }
 
+    async listarItems(){
+        const lista = await readCSV(filePath);
+        return lista;
+    }
+
+    
+
 
 
 
