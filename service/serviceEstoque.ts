@@ -95,6 +95,17 @@ class estoqueService {
         return media;
     }
 
+    async mediaPesos(){
+        const data = await this.listarItens();
+        if(data.length === 0){
+            return 0;
+        }
+        const total = await this.pesoTotal();
+        const media = (total / data.length);
+
+        return media;
+    }
+
 
 
 
