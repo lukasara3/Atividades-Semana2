@@ -84,6 +84,17 @@ class estoqueService {
         return total;
     }
 
+    async mediaValores(){
+        const data = await this.listarItens();
+        if(data.length === 0){
+            return 0;
+        }
+        const total = await this.valorTotal();
+        const media = (total / data.length);
+
+        return media;
+    }
+
 
 
 
