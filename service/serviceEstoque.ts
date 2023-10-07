@@ -65,6 +65,23 @@ class estoqueService {
                 total += +item.valor;
             }
         }
+        return total;
+    }
+
+    async pesoTotal(){
+        const data = await this.listarItens();
+        if(data.length === 0){
+            return 0;
+        }
+        let total = 0; // usando let para poder alterar seu valor ao longo das iteraçoes da funçao
+
+        for (const item of data){
+            console.log(item.peso);
+            if(!isNaN(item.peso)){              // verificando se o item.valor é um número
+                total += +item.peso;
+            }
+        }
+        return total;
     }
 
 
