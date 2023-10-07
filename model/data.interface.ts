@@ -1,7 +1,7 @@
 export interface Data {
     id: number;
     nome: string;
-    peso : string;
-    valor : string;
+    peso : number;
+    valor : number;
     quantidade : number;
 }
