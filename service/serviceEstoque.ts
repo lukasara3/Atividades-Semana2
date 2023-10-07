@@ -3,7 +3,6 @@ import {Data} from '../model/data.interface'
 import writeCSV from '../model/writeCSV'
 import fs, { read } from 'fs'
 
-
 const filePath = 'C:\\Users\\lucao\\OneDrive\\Área de Trabalho\\UFMG\\iJunior\\Trainee\\Semana 2\\Atividades-Semana2\\model\\estoque.csv'
 
 class estoqueService {
@@ -106,13 +105,27 @@ class estoqueService {
         return media;
     }
 
+    async qtdeItens(){
+        const data = await this.listarItens();
+        if(data.length === 0){
+            return 0;
+        }
+        let total = 0; 
 
+        for (const item of data){
+            console.log(item.quantidade);
+            if(!isNaN(item.quantidade)){              
+                total += +item.quantidade;
+            }
+        }
+        return total;
+    }
 
-
-
+    async qtdeProdutos(){
+        const data = await this.listarItens();
+        return data.length;
+    }
 }
-
-
 
 export default new estoqueService();
 
