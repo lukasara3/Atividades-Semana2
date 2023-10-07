@@ -6,7 +6,7 @@ import readline from 'readline'; //usando readline para ler do teclado e retorna
 
 const rl = readline.createInterface({
     input: process.stdin,
-    output: process.stdout,
+    output: process.stdout
 });
 
 
@@ -74,6 +74,11 @@ async function main(){
             case '9':
                 await qtdeProdutos();
                 break;
+            case '0':
+                rl.close();
+                return;
+            default:
+                console.log("Opção inválida!");
 
         }
     }
@@ -86,6 +91,8 @@ function askQuestion(question: string): Promise<string> {             // pergunt
         });
     });
 }
+
+main();
 
 
 
