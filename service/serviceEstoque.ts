@@ -8,7 +8,7 @@ const filePath = 'C:\\Users\\lucao\\OneDrive\\Área de Trabalho\\UFMG\\iJunior\\
 class estoqueService {
 
     async criar(data: Data){
-        if(!data || data.id == null && data.valor == null){
+        if(!data || data.id == null || data.valor == null){
             throw new Error("Dados inválidos")
         }
         if(isNaN(data.id) || data.id << 0){
