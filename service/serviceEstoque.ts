@@ -3,7 +3,7 @@ import {Data} from '../model/data.interface'
 import writeCSV from '../model/writeCSV'
 import fs, { read } from 'fs'
 
-const filePath = 'C:\\Users\\lucao\\OneDrive\\Área de Trabalho\\UFMG\\iJunior\\Trainee\\Semana 2\\Atividades-Semana2\\model\\estoque.csv'
+const filePath = '../model/estoque.csv'
 
 class estoqueService {
 
